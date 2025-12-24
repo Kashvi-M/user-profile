@@ -6,9 +6,13 @@ Setup & Run Instructions:
 
 Backend Setup:
 cd backend
+
 python -m venv venv
+
 venv\Scripts\activate
+
 pip install -r requirements.txt
+
 python run.py
 
 Backend will start at:
@@ -17,18 +21,22 @@ http://127.0.0.1:5000
 Frontend Setup:
 Simply open the frontend in a browser:
 cd frontend
+
 open index.html
 
 API Documentation:
 Authentication APIs
 POST /register
+
 Registers a new user with encrypted Aadhaar/ID number.
 
 POST /login
+
 Authenticates user and returns a JWT token.
 
 Profile API (Protected)
 GET /profile
+
 Requires JWT token in Authorization header
 Decrypts Aadhaar/ID number before sending response
 
