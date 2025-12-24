@@ -25,7 +25,9 @@ cd frontend
 open index.html
 
 API Documentation:
+
 Authentication APIs
+
 POST /register
 
 Registers a new user with encrypted Aadhaar/ID number.
@@ -35,6 +37,7 @@ POST /login
 Authenticates user and returns a JWT token.
 
 Profile API (Protected)
+
 GET /profile
 
 Requires JWT token in Authorization header
