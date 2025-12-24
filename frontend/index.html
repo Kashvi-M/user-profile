@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile Management - Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="auth-container" id="loginContainer">
+            <div class="auth-card">
+                <h1>Welcome Back</h1>
+                <p class="subtitle">Sign in to your account</p>
+                
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label for="loginEmail">Email</label>
+                        <input type="email" id="loginEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="loginPassword">Password</label>
+                        <input type="password" id="loginPassword" name="password" required>
+                    </div>
+                    
+                    <div id="loginError" class="error-message" style="display: none;"></div>
+                    
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                </form>
+                
+                <p class="switch-auth">
+                    Don't have an account? <a href="#" id="showRegister">Sign up</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="auth-container" id="registerContainer" style="display: none;">
+            <div class="auth-card">
+                <h1>Create Account</h1>
+                <p class="subtitle">Sign up to get started</p>
+                
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label for="registerEmail">Email *</label>
+                        <input type="email" id="registerEmail" name="email" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="registerPassword">Password *</label>
+                        <input type="password" id="registerPassword" name="password" required minlength="6">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="fullName">Full Name</label>
+                        <input type="text" id="fullName" name="full_name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone">Phone</label>
+                        <input type="tel" id="phone" name="phone">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="aadhaarId">Aadhaar/ID Number</label>
+                        <input type="text" id="aadhaarId" name="aadhaar_id" placeholder="Will be encrypted">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="dateOfBirth">Date of Birth</label>
+                        <input type="date" id="dateOfBirth" name="date_of_birth">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="address">Address</label>
+                        <textarea id="address" name="address" rows="3"></textarea>
+                    </div>
+                    
+                    <div id="registerError" class="error-message" style="display: none;"></div>
+                    
+                    <button type="submit" class="btn btn-primary">Sign Up</button>
+                </form>
+                
+                <p class="switch-auth">
+                    Already have an account? <a href="#" id="showLogin">Sign in</a>
+                </p>
+            </div>
+        </div>
+
+        <div class="dashboard-container" id="dashboardContainer" style="display: none;">
+            <div class="dashboard">
+                <header class="dashboard-header">
+                    <h1>User Profile Dashboard</h1>
+                    <button id="logoutBtn" class="btn btn-secondary">Logout</button>
+                </header>
+                
+                <div class="profile-section">
+                    <div id="loadingMessage" class="loading">Loading profile...</div>
+                    <div id="profileContent" style="display: none;">
+                        <div class="profile-card">
+                            <h2>Profile Information</h2>
+                            <div class="profile-details">
+                                <div class="detail-item">
+                                    <label>Email:</label>
+                                    <span id="profileEmail"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Full Name:</label>
+                                    <span id="profileFullName"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Phone:</label>
+                                    <span id="profilePhone"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Address:</label>
+                                    <span id="profileAddress"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Aadhaar/ID Number:</label>
+                                    <span id="profileAadhaar" class="sensitive-data"></span>
+                                    <div id="updateAadhaarForm" style="display: none; margin-top: 10px;">
+                                        <input type="text" id="updateAadhaarInput" placeholder="Enter Aadhaar/ID to update" style="padding: 8px; width: 300px; margin-right: 10px;">
+                                        <button id="updateAadhaarBtn" class="btn btn-primary" style="padding: 8px 16px;">Update</button>
+                                        <button id="cancelUpdateBtn" class="btn btn-secondary" style="padding: 8px 16px; margin-left: 5px;">Cancel</button>
+                                    </div>
+                                    <button id="showUpdateFormBtn" style="display: none; margin-top: 10px; padding: 6px 12px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer;">Update Aadhaar/ID</button>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Date of Birth:</label>
+                                    <span id="profileDOB"></span>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Member Since:</label>
+                                    <span id="profileCreatedAt"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="profileError" class="error-message" style="display: none;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,264 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+}
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.auth-card {
+    background: white;
+    border-radius: 12px;
+    padding: 40px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.auth-card h1 {
+    color: #333;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 14px;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-primary:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background: #f44336;
+    color: white;
+    width: auto;
+    padding: 10px 20px;
+}
+
+.btn-secondary:hover {
+    background: #d32f2f;
+}
+
+.switch-auth {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+    font-size: 14px;
+}
+
+.switch-auth a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.switch-auth a:hover {
+    text-decoration: underline;
+}
+
+.error-message {
+    background: #ffebee;
+    color: #c62828;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    border-left: 4px solid #c62828;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: #666;
+    font-size: 16px;
+}
+
+.dashboard-container {
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.dashboard {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #e0e0e0;
+}
+
+.dashboard-header h1 {
+    color: #333;
+    font-size: 24px;
+}
+
+.profile-section {
+    margin-top: 20px;
+}
+
+.profile-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 30px;
+}
+
+.profile-card h2 {
+    color: #333;
+    margin-bottom: 25px;
+    font-size: 20px;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+}
+
+.profile-details {
+    display: grid;
+    gap: 20px;
+}
+
+.detail-item {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.detail-item label {
+    font-weight: 600;
+    color: #555;
+    font-size: 14px;
+}
+
+.detail-item span {
+    color: #333;
+    font-size: 15px;
+    padding: 8px;
+    background: white;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+}
+
+.sensitive-data {
+    background: #fff3cd !important;
+    border-color: #ffc107 !important;
+    font-family: 'Courier New', monospace;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .auth-card {
+        padding: 30px 20px;
+    }
+    
+    .dashboard {
+        padding: 20px;
+    }
+    
+    .dashboard-header {
+        flex-direction: column;
+        gap: 15px;
+        align-items: flex-start;
+    }
+    
+    .btn-secondary {
+        width: 100%;
+    }
+}
+

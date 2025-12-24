@@ -1,0 +1,14 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+.env
+*.key
+
+# Database (optional but recommended)
+instance/
+
+# Frontend
+node_modules/
+dist/
+build/
